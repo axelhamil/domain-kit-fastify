@@ -1,0 +1,12 @@
+openapi: 3.0.3
+info:
+  description: ""
+  title: ""
+  version: 1.0.0
+components:
+  schemas: {}
+paths: {}
+servers:
+  - description: Localhost
+    url: http://localhost:3030
+tags: []

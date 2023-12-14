@@ -1,0 +1,81 @@
+module.exports = {
+    root: true,
+    env: {
+        es2021: true,
+        node: true,
+    },
+    extends: [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+    ],
+    ignorePatterns: [
+        ".eslintrc.js",
+        "**/.next/**",
+        "**/build/**",
+        "**/dist/**",
+        "**/node_modules/**",
+    ],
+    overrides: [
+        {
+            env: {
+                node: true,
+            },
+            files: [".eslintrc.{js,cjs}"],
+            parserOptions: {
+                sourceType: "script",
+            },
+        },
+    ],
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+        ecmaVersion: "latest",
+        project: "./tsconfig.json",
+        sourceType: "module",
+    },
+    plugins: ["@typescript-eslint", "simple-import-sort", "sort-keys-fix", "unused-imports"],
+    rules: {
+        "@typescript-eslint/consistent-type-assertions": 1,
+        "@typescript-eslint/explicit-function-return-type": 1,
+        "@typescript-eslint/no-explicit-any": 1,
+        "@typescript-eslint/no-use-before-define": 1,
+        "@typescript-eslint/no-unused-vars": 1,
+        "@typescript-eslint/prefer-optional-chain": 1,
+        "comma-spacing": ["error", { after: true, before: false }],
+        eqeqeq: 1,
+        "object-curly-spacing": ["error", "always"],
+        "prettier/prettier": [
+            1,
+            {
+                arrowParens: "always",
+                bracketSpacing: true,
+                doubleQuote: true,
+                endOfLine: "lf",
+                htmlWhitespaceSensitivity: "css",
+                jsxBracketSameLine: false,
+                jsxSingleQuote: false,
+                printWidth: 80,
+                proseWrap: "preserve",
+                quoteProps: "as-needed",
+                semi: true,
+                tabWidth: 2,
+                trailingComma: "all",
+                useTabs: false,
+            },
+        ],
+        "simple-import-sort/exports": 2,
+        "simple-import-sort/imports": 2,
+        "sort-keys": [
+            1,
+            "asc",
+            {
+                caseSensitive: true,
+                minKeys: 2,
+                natural: false,
+            },
+        ],
+        "sort-keys-fix/sort-keys-fix": 1,
+        "unused-imports/no-unused-imports": 2,
+    },
+};
